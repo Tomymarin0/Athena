@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Este archivo le dice a git que archivos debe ignorar. Se ven dependencias.
+# dependencies y nos sirve para control de versiones con Git
 /node_modules
 /.pnp
 .pnp.js

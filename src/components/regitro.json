@@ -1,0 +1,13 @@
+{
+    "Nombre": "",
+    "Apellido": "",
+    "Correo electronico":"",
+    "Numero de telefono":"",
+    "Contraseña":"",
+    "Tipo de usuario": "opciones Proveedor o Estudiante",
+    "Fecha de nacimiento": "",
+    "Maximo Nivel alcanzado": "",
+    "Titulo": "",
+    "Esperiencia": ""
+
+}
