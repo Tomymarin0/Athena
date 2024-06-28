@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Logo from "../../Imagenes/logo-app - mobile.png";
+import Logo from "../../Imagenes/logomv.png";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Styles from "../NavBar/Navbar.module.css";
@@ -15,13 +15,10 @@ import { LiaUserCircleSolid } from "react-icons/lia"
 export default function ButtonAppBarLoged({link}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);;
-  const setUser = link[2];
-  const user2 = link[1];
-  console.log(user2);
+  const setUser = link[1];
+  const user2 = link[0];
   const cerrarSesion = () => {
     setUser([]);
-
-
   };
 
   const handleClick = (event) => {
@@ -39,7 +36,7 @@ export default function ButtonAppBarLoged({link}) {
           <IconButton 
             size="large"
             edge="start"
-            color="default"
+            color="inherit"
             aria-label="menu"
             onClick={handleClick}
             sx={{ mr: 2 }}
@@ -54,17 +51,20 @@ export default function ButtonAppBarLoged({link}) {
             MenuListProps={{
               'aria-labelledby': 'basic-button',
             }}
-          >     
-            <MenuItem onClick={handleClose} ><Link to="/" className={Styles.linkMobile}>Home</Link></MenuItem>
-            <MenuItem onClick={handleClose} ><Link to="/service" className={Styles.linkMobile}>Servicios</Link></MenuItem>
-            <MenuItem onClick={handleClose} ><Link to={link[0]} className={Styles.linkMobile}>Mis Servicios</Link></MenuItem>
-            <MenuItem onClick={handleClose}>Mi Cuenta</MenuItem>
-            <MenuItem onClick={cerrarSesion}>Cerrar Sesion</MenuItem>
+          > 
+            <MenuItem onClick={handleClose} ><Link to="/inicio" className={Styles.linkMobile}>INICIO</Link></MenuItem>
+            <MenuItem onClick={handleClose} ><Link to="/peliculas" className={Styles.linkMobile}>PELICULAS</Link></MenuItem>
+            <MenuItem onClick={handleClose} ><Link to="/series" className={Styles.linkMobile}>SERIES</Link></MenuItem>
+            <MenuItem onClick={handleClose} ><Link to="/peliculasVistas" className={Styles.linkMobile}>VISTAS</Link></MenuItem>
+            <MenuItem onClick={handleClose} ><Link to="/peliculasPorVer" className={Styles.linkMobile}>POR VER</Link></MenuItem>
+            <MenuItem onClick={handleClose} ><Link to="/peliculasFavoritas" className={Styles.linkMobile}>FAVORITAS</Link></MenuItem>
+            <MenuItem onClick={handleClose} ><Link to="/micuenta" className={Styles.linkMobile}>MI CUENTA</Link></MenuItem>
+            <MenuItem onClick={cerrarSesion}>CERRAR SESION</MenuItem>
           </Menu>          
           <img className={Styles.logoMobile} src={Logo} alt="logo" />
           <div className={Styles.BoxMobile}> 
           <Typography className={Styles.buttontext2}>
-            {user2[0]}
+            {user2[1]}
           </Typography>       
           <LiaUserCircleSolid className={Styles.iconito2}/>
           </div>

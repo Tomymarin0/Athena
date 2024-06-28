@@ -6,21 +6,21 @@ const Footer = () => {
   return (
     <Box 
       sx={{
-        backgroundColor: "#333",
+        backgroundColor: "#1B6DC1",
         color: "#fff",
         padding: "20px 0",
         textAlign: "center",
         fontSize: "1em",
       }}
     >
-      <Typography variant="h6" >Pie de Página</Typography>
+      <Typography variant="h6" >MovieVerse</Typography>
       <Typography variant="body2">
-        © {new Date().getFullYear()} Athena Education | Todos los derechos reservados
+        © {new Date().getFullYear()} MovieVerse | Todos los derechos reservados
       </Typography>
-      <Link href="/politica-de-privacidad" color="inherit" style={{ marginLeft: "10px", marginRight: "10px" }}>
+      <Link href="/" color="inherit" style={{ marginLeft: "10px", marginRight: "10px" }}>
         Política de Privacidad
       </Link>
-      <Link href="/terminos-y-condiciones" color="inherit">
+      <Link href="/" color="inherit">
         Términos y Condiciones
       </Link>
     </Box>

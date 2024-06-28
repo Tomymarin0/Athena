@@ -2,16 +2,16 @@ import React from 'react';
 import { Grid} from '@mui/material';
 import Icono from "../../Imagenes/logomv.png";
 import Styles from"../Login/login.module.css"
-import LoginForm from './Forms/LoginForm';
+import MiCuentaForm from './Forms/MiCuentaForm';
 
 
-const Login=({setUser}) =>{
+const MiCuenta=({user, setUser}) =>{
 
 
     return (
         <Grid marginBlock="auto" align="center" container spacing={2}>
             <Grid className={Styles.box2} align="center" xs={7} md={6} order={{ xs: 2, md: 1 }} direction="column">
-                <LoginForm setUser={setUser}/>
+                <MiCuentaForm user={user} setUser={setUser}/>
             </Grid>
             <Grid className={Styles.box1} align="left" xs={4} md={4} order={{ xs: 2, md: 1 }} direction="column">
                 <div>
@@ -33,4 +33,4 @@ const Login=({setUser}) =>{
     );
 }
 
-export default Login;
+export default MiCuenta;

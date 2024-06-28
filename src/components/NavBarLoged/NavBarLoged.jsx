@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "../NavBar/Navbar.module.css";
-import Logo from "../../Imagenes/logo-app.png";
+import Logo from "../../Imagenes/logomv.png";
 import { LiaUserCircleSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
@@ -22,17 +22,9 @@ function NavBarLoged({user, setUser}) {
 
   const cerrarSesion = () => {
     setUser([]);
-
-
   };
 
-  const link = (() => {
-    if(user[1]===0){
-      return "/clientservice" // 0 cliente
-    } else {
-      return "/myservice" // 1 proveedor
-    }
-  })();
+
 
 
   return (
@@ -47,8 +39,8 @@ function NavBarLoged({user, setUser}) {
         onClick={handleClick}
         className={Styles.button}
       >
-        <Typography className={Styles.buttontext}>
-          {user[0]}
+        <Typography className={Styles.buttontext} color="white">
+          {user[1]}
         </Typography>
       </Button>
       <LiaUserCircleSolid className={Styles.iconito}/>
@@ -61,23 +53,31 @@ function NavBarLoged({user, setUser}) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Mi Cuenta</MenuItem>
-        <MenuItem onClick={cerrarSesion}>Cerrar Sesion</MenuItem>
+        <MenuItem onClick={handleClose} ><Link to="/micuenta" className={Styles.linkMobile}>MI CUENTA</Link></MenuItem>
+        <MenuItem onClick={cerrarSesion}>CERRAR SESION</MenuItem>
       </Menu>
 
         </div>
       </div>
       <div className={Styles.containerNavbar}>
-        <ButtonAppBarLoged link={[link,user, setUser]}/>
-        <img className={Styles.logo} src={Logo} alt="logo" />
-        <Link to="/" className={Styles.link}>
-          <h1 className={Styles.navBarButtons}>Home</h1>
+        <ButtonAppBarLoged link={[user, setUser]}/>
+        <Link to="/inicio" className={Styles.logo}>
+          <img  className={Styles.logo} src={Logo} alt="logo" />
         </Link>
-        <Link to="/service" className={Styles.link}>
-          <h1 className={Styles.navBarButtons}>Servicios</h1>
+        <Link to="/peliculas" className={Styles.link}>
+          <h1 className={Styles.navBarButtons}>PELICULAS</h1>
         </Link>
-        <Link to={link} className={Styles.link}>
-          <h1 className={Styles.navBarButtons}>Mis Servicios</h1>
+        <Link to="/series" className={Styles.link}>
+          <h1 className={Styles.navBarButtons}>SERIES</h1>
+        </Link>
+        <Link to="/peliculasvistas" className={Styles.link}>
+          <h1 className={Styles.navBarButtons}>VISTAS</h1>
+        </Link>
+        <Link to="/peliculasporver" className={Styles.link}>
+          <h1 className={Styles.navBarButtons}>POR VER</h1>
+        </Link>
+        <Link to="/peliculasfavoritas" className={Styles.link}>
+          <h1 className={Styles.navBarButtons}>FAVORITAS</h1>
         </Link>
       </div>
       <div className={Styles.colorNavbar2}></div>

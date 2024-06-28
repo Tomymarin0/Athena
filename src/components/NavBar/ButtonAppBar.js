@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Logo from "../../Imagenes/logo-app - mobile.png";
+import Logo from "../../Imagenes/logomv.png";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Styles from "./Navbar.module.css";
@@ -27,8 +27,8 @@ export default function ButtonAppBar() {
           <IconButton 
             size="large"
             edge="start"
-            color="default"
             aria-label="menu"
+            color="inherit"
             onClick={handleClick}
             sx={{ mr: 2 }}
           >
@@ -43,10 +43,8 @@ export default function ButtonAppBar() {
               'aria-labelledby': 'basic-button',
             }}
           >     
-            <MenuItem onClick={handleClose} ><Link to="/" className={Styles.linkMobile}>Home</Link></MenuItem>
-            <MenuItem onClick={handleClose} ><Link to="/service" className={Styles.linkMobile}>Servicios</Link></MenuItem>
-            <MenuItem onClick={handleClose} ><Link to="/login" className={Styles.linkMobile}>Iniciar Sesion</Link></MenuItem>
-            <MenuItem onClick={handleClose} ><Link to="/register" className={Styles.linkMobile}>Registrarse</Link></MenuItem>
+            <MenuItem onClick={handleClose} ><Link to="/login" className={Styles.linkMobile}>INICIAR SESION</Link></MenuItem>
+            <MenuItem onClick={handleClose} ><Link to="/register" className={Styles.linkMobile}>REGISTRARSE</Link></MenuItem>
 
           </Menu>          
           <img className={Styles.logoMobile} src={Logo} alt="logo" />
